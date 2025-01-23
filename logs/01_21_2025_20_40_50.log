@@ -1,0 +1,7 @@
+[2025-01-21 20:41:04,574] 24 root - INFO - Data Ingestion Started
+[2025-01-21 20:41:04,748] 30 root - INFO - Succesfully read the data from csv
+[2025-01-21 20:41:05,188] 34 root - INFO - Succesfully save the  raw data to the artifacts folder
+[2025-01-21 20:41:05,189] 37 root - INFO - Train test split started
+[2025-01-21 20:41:05,373] 39 root - INFO - Successfully  split the data into  train and test
+[2025-01-21 20:41:05,823] 44 root - INFO - Succeasfully save train and test data to the  artifacts
+[2025-01-21 20:41:05,823] 47 root - INFO - DataIngestio completed
