@@ -1,0 +1,13 @@
+[2025-01-24 20:24:06,057] 15 root - INFO - Data Ingestion Started
+[2025-01-24 20:24:06,145] 21 root - INFO - Successfully read the data from csv
+[2025-01-24 20:24:06,515] 26 root - INFO - Successfully saved the raw data to the artifacts folder
+[2025-01-24 20:24:06,515] 28 root - INFO - Data Ingestion completed
+[2025-01-24 20:24:06,515] 19 root - INFO - Data transformation process initialized
+[2025-01-24 20:24:06,515] 23 root - INFO - Starting data transformation
+[2025-01-24 20:24:06,647] 27 root - INFO - Successfully loaded raw data
+[2025-01-24 20:24:06,653] 42 root - INFO - Applying SMOTE to balance the entire dataset
+[2025-01-24 20:24:07,400] 45 root - INFO - Successfully applied SMOTE
+[2025-01-24 20:24:07,407] 48 root - INFO - New Class Distribution: Counter({1: 23364, 0: 23364})
+[2025-01-24 20:24:07,407] 51 root - INFO - Train-test split started
+[2025-01-24 20:24:07,425] 53 root - INFO - Successfully split the data into train and test
+[2025-01-24 20:24:07,436] 63 root - INFO - Data transformation completed successfully

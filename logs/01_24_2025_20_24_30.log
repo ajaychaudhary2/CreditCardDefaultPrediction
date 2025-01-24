@@ -1,0 +1,43 @@
+[2025-01-24 20:24:33,024] 15 root - INFO - Data Ingestion Started
+[2025-01-24 20:24:33,121] 21 root - INFO - Successfully read the data from csv
+[2025-01-24 20:24:33,633] 26 root - INFO - Successfully saved the raw data to the artifacts folder
+[2025-01-24 20:24:33,633] 28 root - INFO - Data Ingestion completed
+[2025-01-24 20:24:33,634] 19 root - INFO - Data transformation process initialized
+[2025-01-24 20:24:33,634] 23 root - INFO - Starting data transformation
+[2025-01-24 20:24:33,756] 27 root - INFO - Successfully loaded raw data
+[2025-01-24 20:24:33,766] 42 root - INFO - Applying SMOTE to balance the entire dataset
+[2025-01-24 20:24:34,205] 45 root - INFO - Successfully applied SMOTE
+[2025-01-24 20:24:34,212] 48 root - INFO - New Class Distribution: Counter({1: 23364, 0: 23364})
+[2025-01-24 20:24:34,212] 51 root - INFO - Train-test split started
+[2025-01-24 20:24:34,230] 53 root - INFO - Successfully split the data into train and test
+[2025-01-24 20:24:34,243] 63 root - INFO - Data transformation completed successfully
+[2025-01-24 20:24:34,247] 25 root - INFO - Splitting Dependent and Independent variables from train and test data
+[2025-01-24 20:24:34,248] 34 root - INFO - Initializing RandomForestClassifier
+[2025-01-24 20:24:34,248] 46 root - INFO - Training the RandomForestClassifier
+[2025-01-24 20:24:53,418] 50 root - INFO - Making predictions on train and test data
+[2025-01-24 20:24:54,153] 55 root - INFO - Generating classification reports
+[2025-01-24 20:24:54,263] 60 root - INFO - Calculating accuracy scores
+[2025-01-24 20:24:54,269] 65 root - INFO - Classification Report - Training Data:
+              precision    recall  f1-score   support
+
+         0.0       0.79      0.85      0.82     17545
+         1.0       0.84      0.77      0.80     17501
+
+    accuracy                           0.81     35046
+   macro avg       0.81      0.81      0.81     35046
+weighted avg       0.81      0.81      0.81     35046
+
+[2025-01-24 20:24:54,269] 66 root - INFO - Classification Report - Test Data:
+              precision    recall  f1-score   support
+
+         0.0       0.75      0.83      0.79      5819
+         1.0       0.81      0.73      0.77      5863
+
+    accuracy                           0.78     11682
+   macro avg       0.78      0.78      0.78     11682
+weighted avg       0.78      0.78      0.78     11682
+
+[2025-01-24 20:24:54,269] 67 root - INFO - Training Accuracy: 0.8106
+[2025-01-24 20:24:54,269] 68 root - INFO - Test Accuracy: 0.7811
+[2025-01-24 20:24:54,269] 72 root - INFO - Model is neither underfitting nor significantly overfitting.
+[2025-01-24 20:24:54,269] 79 root - INFO - Saving trained model to Artifacts\model.pkl

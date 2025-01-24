@@ -1,0 +1,90 @@
+[2025-01-24 20:02:27,172] 24 root - INFO - Data Ingestion Started
+[2025-01-24 20:02:27,251] 30 root - INFO - Succesfully read the data from csv
+[2025-01-24 20:02:27,686] 34 root - INFO - Succesfully save the  raw data to the artifacts folder
+[2025-01-24 20:02:27,687] 37 root - INFO - Train test split started
+[2025-01-24 20:02:27,694] 39 root - INFO - Successfully  split the data into  train and test
+[2025-01-24 20:02:28,161] 44 root - INFO - Succeasfully save train and test data to the  artifacts
+[2025-01-24 20:02:28,161] 47 root - INFO - DataIngestion completed
+[2025-01-24 20:02:28,163] 24 root - INFO - Data transformation process initialized
+[2025-01-24 20:02:28,163] 29 root - INFO - Starting data transformation
+[2025-01-24 20:02:28,319] 33 root - INFO - Successfully loaded train and test data.
+[2025-01-24 20:02:28,376] 34 root - INFO - Train DataFrame head:
+      ID  LIMIT_BAL  SEX  EDUCATION  MARRIAGE  AGE  ...  PAY_AMT2  PAY_AMT3  PAY_AMT4  PAY_AMT5  PAY_AMT6  default.payment.next.month
+0  21178   300000.0    1          3         2   31  ...    4000.0    4100.0    3300.0    3500.0    3500.0                           0
+1  23943    20000.0    1          2         2   24  ...    2110.0    4000.0    6000.0    4000.0     174.0                           0
+2   1248    90000.0    2          2         2   35  ...       0.0       0.0       0.0       0.0       0.0                           0
+3  23623   300000.0    2          2         1   40  ...       0.0       0.0       0.0       0.0       0.0                           0
+4  28455    70000.0    2          2         2   36  ...    2044.0    1773.0    1181.0    1215.0    1297.0                           1
+
+[5 rows x 25 columns]
+[2025-01-24 20:02:28,431] 35 root - INFO - Test DataFrame head:
+      ID  LIMIT_BAL  SEX  EDUCATION  MARRIAGE  AGE  ...  PAY_AMT2  PAY_AMT3  PAY_AMT4  PAY_AMT5  PAY_AMT6  default.payment.next.month
+0   2309    30000.0    1          2         2   25  ...    2000.0    1500.0    1500.0    1500.0    2000.0                           0
+1  22405   150000.0    2          1         2   26  ...    4235.0    3161.0    2647.0    2669.0    2669.0                           0
+2  23398    70000.0    2          3         1   32  ...    3112.0    3000.0    2438.0    2500.0    2554.0                           0
+3  25059   130000.0    1          3         2   49  ...    1808.0    7014.0      27.0    7011.0    4408.0                           0
+4   2665    50000.0    2          2         2   36  ...    1500.0    1000.0    1800.0       0.0    1000.0                           1
+
+[5 rows x 25 columns]
+[2025-01-24 20:02:28,432] 36 root - INFO - Data types:
+ID                              int64
+LIMIT_BAL                     float64
+SEX                             int64
+EDUCATION                       int64
+MARRIAGE                        int64
+AGE                             int64
+PAY_0                           int64
+PAY_2                           int64
+PAY_3                           int64
+PAY_4                           int64
+PAY_5                           int64
+PAY_6                           int64
+BILL_AMT1                     float64
+BILL_AMT2                     float64
+BILL_AMT3                     float64
+BILL_AMT4                     float64
+BILL_AMT5                     float64
+BILL_AMT6                     float64
+PAY_AMT1                      float64
+PAY_AMT2                      float64
+PAY_AMT3                      float64
+PAY_AMT4                      float64
+PAY_AMT5                      float64
+PAY_AMT6                      float64
+default.payment.next.month      int64
+dtype: object
+[2025-01-24 20:02:28,443] 57 root - INFO - Applying SMOTE to balance the training dataset
+[2025-01-24 20:02:29,143] 60 root - INFO - Successfully applied SMOTE
+[2025-01-24 20:02:29,153] 63 root - INFO - New Class Distribution: Counter({0: 17491, 1: 17491})
+[2025-01-24 20:02:29,153] 64 root - INFO - Shape: (34982, 23)
+[2025-01-24 20:02:29,168] 80 root - INFO - Data transformation completed successfully
+[2025-01-24 20:02:29,170] 25 root - INFO - Splitting Dependent and Independent variables from train and test data
+[2025-01-24 20:02:29,171] 34 root - INFO - Initializing RandomForestClassifier
+[2025-01-24 20:02:29,171] 46 root - INFO - Training the RandomForestClassifier
+[2025-01-24 20:02:47,227] 50 root - INFO - Making predictions on train and test data
+[2025-01-24 20:02:47,741] 55 root - INFO - Generating classification reports
+[2025-01-24 20:02:47,830] 60 root - INFO - Calculating accuracy scores
+[2025-01-24 20:02:47,840] 65 root - INFO - Classification Report - Training Data:
+              precision    recall  f1-score   support
+
+         0.0       0.79      0.86      0.82     17491
+         1.0       0.85      0.77      0.80     17491
+
+    accuracy                           0.81     34982
+   macro avg       0.82      0.81      0.81     34982
+weighted avg       0.82      0.81      0.81     34982
+
+[2025-01-24 20:02:47,840] 66 root - INFO - Classification Report - Test Data:
+              precision    recall  f1-score   support
+
+         0.0       0.87      0.83      0.85      5873
+         1.0       0.47      0.55      0.51      1627
+
+    accuracy                           0.77      7500
+   macro avg       0.67      0.69      0.68      7500
+weighted avg       0.78      0.77      0.78      7500
+
+[2025-01-24 20:02:47,841] 67 root - INFO - Training Accuracy: 0.8144
+[2025-01-24 20:02:47,841] 68 root - INFO - Test Accuracy: 0.7691
+[2025-01-24 20:02:47,841] 72 root - INFO - Model is neither underfitting nor significantly overfitting.
+[2025-01-24 20:02:47,841] 79 root - INFO - Saving trained model to Artifacts\model.pkl

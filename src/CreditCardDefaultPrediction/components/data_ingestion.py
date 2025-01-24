@@ -1,64 +1,38 @@
 import pandas as pd
-import numpy as np
-import sys
 import os
-
-from CreditCardDefaultPrediction.logger import logging
-from CreditCardDefaultPrediction.exception import customexception\
-    
-from sklearn.model_selection import train_test_split
 from pathlib import Path
+from CreditCardDefaultPrediction.logger import logging
+from CreditCardDefaultPrediction.exception import customexception
 
-
-class DataIngestion_config:
-    rawdata_path:str = os.path.join("Artifacts" , "raw.csv")
-    traindata_path:str= os.path.join("Artifacts","train.csv")
-    testdata_path:str=os.path.join("Artifacts","test.csv")
-    
-    
-
+class DataIngestionConfig:
+    rawdata_path: str = os.path.join("Artifacts", "raw.csv")
+    traindata_path: str = os.path.join("Artifacts", "train.csv")
+    testdata_path: str = os.path.join("Artifacts", "test.csv")
 
 class DataIngestion:
     def __init__(self):
-        self.DataIngestion_config=DataIngestion_config
-        logging.info("Data Ingestion Started")
+        self.data_ingestion_config = DataIngestionConfig()
+        logging.info("Data Ingestion Initialized")
 
-      
     def initiate_data_ingestion(self):
         try:
-            data=pd.read_csv(Path(os.path.join("notebooks/data","UCI_Credit_Card.csv")))
-            logging.info("Succesfully read the data from csv")
-            
-            os.makedirs(os.path.dirname(os.path.join(self.DataIngestion_config.rawdata_path)),exist_ok=True)
-            data.to_csv(self.DataIngestion_config.rawdata_path,index=False)
-            logging.info("Succesfully save the  raw data to the artifacts folder")
-            
-            
-            logging.info("Train test split started")
-            train_data,test_data=train_test_split(data,test_size=.25,random_state=42)
-            logging.info("Successfully  split the data into  train and test")
-            
-            
-            train_data.to_csv(self.DataIngestion_config.traindata_path,index=False)
-            test_data.to_csv(self.DataIngestion_config.testdata_path,index=False)
-            logging.info("Succeasfully save train and test data to the  artifacts")
-            
-            
-            logging.info("DataIngestion completed")
-            
-            
-            
-            
-            return(
-                self.DataIngestion_config.traindata_path,
-                self.DataIngestion_config.testdata_path
-            )
-        
-        
-        
-        
-        
+            logging.info("Loading raw data from CSV file")
+            # Load the raw data
+            data = pd.read_csv(Path(os.path.join("notebooks/data", "UCI_Credit_Card.csv")))
+
+            logging.info(f"Successfully read the data from CSV with {data.shape[0]} rows and {data.shape[1]} columns")
+
+            # Save raw data to Artifacts folder
+            os.makedirs(os.path.dirname(self.data_ingestion_config.rawdata_path), exist_ok=True)
+            logging.info(f"Saving raw data to {self.data_ingestion_config.rawdata_path}")
+            data.to_csv(self.data_ingestion_config.rawdata_path, index=False)
+
+            logging.info(f"Raw data successfully saved to {self.data_ingestion_config.rawdata_path}")
+            logging.info("Data Ingestion completed successfully")
+
+            # Return the path where the raw data is saved
+            return self.data_ingestion_config.rawdata_path
 
         except Exception as e:
-            logging.info("Exception occur durin data ingestion  stage")
-            raise customexception
+            logging.error(f"Exception occurred during data ingestion: {e}")
+            raise customexception(e)

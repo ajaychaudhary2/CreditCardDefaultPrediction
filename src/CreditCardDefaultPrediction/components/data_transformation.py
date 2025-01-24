@@ -1,103 +1,73 @@
 import pandas as pd
 import numpy as np
 import os
-import sys
-from sklearn.impute import SimpleImputer
 from imblearn.over_sampling import SMOTE
-import pickle
-from collections import Counter
-from CreditCardDefaultPrediction.utils.utils import save_object
-
+from sklearn.model_selection import train_test_split
 from CreditCardDefaultPrediction.logger import logging
 from CreditCardDefaultPrediction.exception import customexception
+from collections import Counter
 
-class DataTransformation_config:
-    
-    def __init__(self):
-        self.transformed_train_datapath = os.path.join("Artifacts", "transformed_train.npy")
-        self.transformed_test_datapath = os.path.join("Artifacts", "transformed_test.npy")
-        self.preprossesor_objfile_path = os.path.join("Artifacts", "preprocessor.pkl")
+class DataTransformationConfig:
+    transformed_train_datapath = os.path.join("Artifacts", "transformed_train.npy")
+    transformed_test_datapath = os.path.join("Artifacts", "transformed_test.npy")
+    preprocessor_objfile_path = os.path.join("Artifacts", "preprocessor.pkl")
+
 
 class DataTransformation:
-    
     def __init__(self):
-        self.DataTransformation_config = DataTransformation_config()
+        self.data_transformation_config = DataTransformationConfig()
         logging.info("Data transformation process initialized")
-        
-    def get_data_transformation(self):
-        
-        try:
-            logging.info("Creating preprocessing object for numeric data.")
-            # Imputer for handling missing values
-            preprocessor = SimpleImputer(strategy="mean")
-            logging.info("Preprocessing object created successfully.")
-            return preprocessor
 
-        except Exception as e:
-            logging.error("Error while creating preprocessing object.")
-            raise customexception(e, sys)
-        
-    def initiate_data_transformation(self, train_data_path, test_data_path):
-        
+    def initiate_data_transformation(self, raw_data_path):
         try:
             logging.info("Starting data transformation")
-            
-            train_df = pd.read_csv(train_data_path)
-            test_df = pd.read_csv(test_data_path)
-            logging.info("Successfully loaded train and test data.")
-            logging.info(f"Train DataFrame head:\n{train_df.head()}")
-            logging.info(f"Test DataFrame head:\n{test_df.head()}")
-            logging.info(f"Data types:\n{train_df.dtypes}")
-            
+
+            # Load the raw data
+            logging.info(f"Loading raw data from {raw_data_path}")
+            raw_data = pd.read_csv(raw_data_path)
+            logging.info(f"Successfully loaded raw data with {raw_data.shape[0]} rows and {raw_data.shape[1]} columns")
+
+            # Define target feature and columns to drop
             target_feature_name = 'default.payment.next.month'
             drop_columns = [target_feature_name, "ID"]
-            
-            input_feature_train_df = train_df.drop(columns=drop_columns, axis=1)
-            input_feature_test_df = test_df.drop(columns=drop_columns, axis=1)
-            
-            target_feature_train_df = train_df[target_feature_name]
-            target_feature_test_df = test_df[target_feature_name]
-            
-            
-            
-            preprocessor = self.get_data_transformation()
-            
-            input_feature_train_arr = preprocessor.fit_transform(input_feature_train_df)
-            input_feature_test_arr = preprocessor.transform(input_feature_test_df)
-            
-            
-            
-            logging.info("Applying SMOTE to balance the training dataset")
-            smote = SMOTE(random_state=42)
-            input_feature_train_arr, target_feature_train_df = smote.fit_resample(input_feature_train_arr, target_feature_train_df)
-            logging.info("Successfully applied SMOTE")
-            
-            
-            
-            # Log the new class distribution after SMOTE
-            logging.info(f"New Class Distribution: {Counter(target_feature_train_df)}")
-            logging.info(f"shape:{input_feature_train_arr.shape}")
-            
-            
-            
-            # Combine transformed features with the target column
-            train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
-            test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
-            
-            
-            
-            np.save(self.DataTransformation_config.transformed_train_datapath, train_arr)
-            np.save(self.DataTransformation_config.transformed_test_datapath, test_arr)
-            
-            # Save the preprocessor object
-            save_object(
-                file_path=self.DataTransformation_config.preprossesor_objfile_path,
-                obj=preprocessor
-            )
 
-            logging.info("Preprocessor object saved successfully")
-            return train_arr, test_arr
-            
+            # Separate features and target
+            logging.info("Separating features and target")
+            input_features = raw_data.drop(columns=drop_columns, axis=1)
+            target = raw_data[target_feature_name]
+
+            # Handle missing values by dropping rows with missing values
+            logging.info("Dropping rows with missing values")
+            input_features.dropna(inplace=True)
+            target = target[input_features.index]
+
+            # Apply SMOTE to balance the dataset before splitting
+            logging.info("Applying SMOTE to balance the entire dataset")
+            smote = SMOTE(random_state=42)
+            input_features_resampled, target_resampled = smote.fit_resample(input_features, target)
+            logging.info("Successfully applied SMOTE")
+
+            # Log the new class distribution after SMOTE
+            logging.info(f"New Class Distribution: {Counter(target_resampled)}")
+
+            # Perform train-test split after SMOTE
+            logging.info("Train-test split started")
+            X_train, X_test, y_train, y_test = train_test_split(input_features_resampled, target_resampled, test_size=0.25, random_state=42)
+            logging.info("Successfully split the data into train and test")
+
+            # Combine transformed features with the target column
+            train_data = np.c_[X_train, np.array(y_train)]
+            test_data = np.c_[X_test, np.array(y_test)]
+
+            # Save the transformed data
+            logging.info(f"Saving transformed train data to {self.data_transformation_config.transformed_train_datapath}")
+            np.save(self.data_transformation_config.transformed_train_datapath, train_data)
+            logging.info(f"Saving transformed test data to {self.data_transformation_config.transformed_test_datapath}")
+            np.save(self.data_transformation_config.transformed_test_datapath, test_data)
+
+            logging.info("Data transformation completed successfully")
+            return train_data, test_data
+
         except Exception as e:
-            logging.error("Exception occurred during data transformation.")
-            raise customexception(e, sys)
+            logging.error(f"Exception occurred during data transformation: {e}")
+            raise customexception(e)

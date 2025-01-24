@@ -1,0 +1,4 @@
+[2025-01-24 20:23:04,672] 15 root - INFO - Data Ingestion Started
+[2025-01-24 20:23:04,819] 21 root - INFO - Successfully read the data from csv
+[2025-01-24 20:23:05,421] 26 root - INFO - Successfully saved the raw data to the artifacts folder
+[2025-01-24 20:23:05,421] 28 root - INFO - Data Ingestion completed

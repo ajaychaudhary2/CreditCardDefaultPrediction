@@ -1,0 +1,6 @@
+[2025-01-24 20:20:15,686] 20 root - INFO - Data Ingestion Started
+[2025-01-24 20:20:15,885] 26 root - INFO - Successfully read the data from csv
+[2025-01-24 20:20:16,535] 31 root - INFO - Successfully saved the raw data to the artifacts folder
+[2025-01-24 20:20:16,718] 46 root - INFO - Applying SMOTE to balance the entire dataset
+[2025-01-24 20:20:17,808] 49 root - INFO - Successfully applied SMOTE
+[2025-01-24 20:20:17,809] 69 root - ERROR - Exception occurred during data ingestion stage
