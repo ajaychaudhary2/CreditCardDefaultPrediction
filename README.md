@@ -92,11 +92,25 @@ CreditCardDefaultPrediction/
 ├── README.md                       # Project documentation
 
 
-How to Run
-Prerequisites
-Python 3.8 or above
-Git installed on your system
-Virtual environment (optional but recommended)
+# How to Run
+
+---
+
+### Prerequisites
+- **Python 3.8 or above**
+- **Git installed on your system**
+- **Virtual environment** (optional but recommended)
+
+---
+
+### Steps
+
+#### 1. Clone the repository:
+
+```bash
+git clone https://github.com/ajaychaudhary2/CreditCardDefaultPrediction.git
+cd CreditCardDefaultPrediction
+
 
 
 
@@ -110,59 +124,14 @@ git clone https://github.com/ajaychaudhary2/CreditCardDefaultPrediction.git
 cd CreditCardDefaultPrediction
 Set up a virtual environment (optional but recommended):
 
-bash
-Copy
-Edit
-python -m venv venv
-source venv/bin/activate    # On Windows: venv\Scripts\activate
-Install dependencies:
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run the Flask app:
-
-bash
-Copy
-Edit
-python app.py
-Open your browser and go to http://127.0.0.1:5000.
-
-Endpoints
-/
-Method: GET
-Description: Displays a welcome message for the API.
-/predict
-Method: POST
-Description: Accepts customer details and predicts default status.
-Input: Form data including features like LIMIT_BAL, AGE, PAY_0 to PAY_6, etc.
-Output: JSON response:
-json
-Copy
-Edit
-{
-    "prediction": [1],
-    "message": "Prediction successful"
-}
-Screenshots
-Form Page
-
-Result Page
-
-Future Enhancements
-Add authentication for secure access.
-Implement database integration for storing prediction logs.
-Deploy the application using cloud platforms (AWS/GCP/Azure).
-Create detailed visualizations for data insights.
 
 
-Contributors
-Ajay Chaudhary
-GitHub: ajaychaudhary2
-vbnet
-Copy
-Edit
+
+## Contributors
+
+- **Ajay Chaudhary**  
+  GitHub: [ajaychaudhary2](https://github.com/ajaychaudhary2)  
+  LinkedIn: [Ajay Chaudhary](https://www.linkedin.com/in/ajay-chaudhary-02287a2ab/)
 
 
 
@@ -172,6 +141,7 @@ Edit
 3. **Step-by-Step Setup Instructions**: Helps users quickly set up and run the project.
 4. **Future Enhancements Section**: Opens the door for potential growth of the project.
 5. **Directory Structure**: Offers clarity on where each file resides and its purpose.
+
 
 
 
