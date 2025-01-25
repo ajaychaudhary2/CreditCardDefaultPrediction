@@ -1,0 +1,12 @@
+[2025-01-25 09:08:22,411] 97 werkzeug - WARNING -  * Debugger is active!
+[2025-01-25 09:08:22,665] 97 werkzeug - INFO -  * Debugger PIN: 116-271-547
+[2025-01-25 09:08:34,660] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 09:08:34] "GET / HTTP/1.1" 200 -
+[2025-01-25 09:08:34,919] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 09:08:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-01-25 09:09:24,776] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 09:09:24] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+[2025-01-25 09:09:39,909] 86 root - INFO - Input data converted to DataFrame
+[2025-01-25 09:09:49,242] 86 root - INFO - Input data converted to DataFrame
+[2025-01-25 09:09:59,206] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 09:09:59] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+[2025-01-25 09:09:59,240] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 09:09:59] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+[2025-01-25 09:10:21,063] 86 root - INFO - Input data converted to DataFrame
+[2025-01-25 09:10:21,116] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 09:10:21] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+[2025-01-25 09:13:02,994] 97 werkzeug - INFO -  * Detected change in 'E:\\Data_Science _master\\ML\\prac_project\\Credit Card Default Prediction\\src\\CreditCardDefaultPrediction\\pipelines\\prediction_pipeline.py', reloading

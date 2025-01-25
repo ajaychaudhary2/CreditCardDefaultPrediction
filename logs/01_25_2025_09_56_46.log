@@ -1,0 +1,5 @@
+[2025-01-25 09:56:46,660] 81 root - INFO - Converting custom data into DataFrame
+[2025-01-25 09:56:46,660] 16 root - INFO - Starting the prediction pipeline
+[2025-01-25 09:56:46,661] 19 root - INFO - Loading model from Artifacts\model.pkl
+[2025-01-25 09:56:48,016] 24 root - INFO - Loading preprocessor from Artifacts\preprocessor.pkl
+[2025-01-25 09:56:48,017] 41 root - ERROR - Exception occurred in prediction pipeline: Preprocessor object is None. Ensure it was saved correctly.

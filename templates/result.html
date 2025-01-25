@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .result-yes {
+            color: red; /* Red for default (negative outcome) */
+        }
+        .result-no {
+            color: green; /* Green for no default (positive outcome) */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Prediction Result</h1>
+    <div class="result {% if result == 'Yes' %}result-yes{% else %}result-no{% endif %}">
+        {% if result == 'Yes' %}
+            The person is likely to default on their credit card payment. (Yes)
+        {% else %}
+            The person is not likely to default on their credit card payment. (No)
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>

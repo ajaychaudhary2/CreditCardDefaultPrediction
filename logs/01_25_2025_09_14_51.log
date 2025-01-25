@@ -1,0 +1,23 @@
+[2025-01-25 09:14:51,692] 97 werkzeug - WARNING -  * Debugger is active!
+[2025-01-25 09:14:51,737] 97 werkzeug - INFO -  * Debugger PIN: 116-271-547
+[2025-01-25 09:14:56,449] 77 root - INFO - Converting custom data into DataFrame
+[2025-01-25 09:14:56,570] 17 root - INFO - Starting the prediction pipeline
+[2025-01-25 09:14:56,570] 20 root - INFO - Loading model from Artifacts\model.pkl
+[2025-01-25 09:14:58,527] 26 root - INFO - Making predictions with the trained model
+[2025-01-25 09:14:58,611] 33 root - ERROR - Exception occurred in prediction pipeline: could not convert string to float: 'Male'
+[2025-01-25 09:14:58,618] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 09:14:58] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+[2025-01-25 09:15:07,876] 77 root - INFO - Converting custom data into DataFrame
+[2025-01-25 09:15:07,880] 17 root - INFO - Starting the prediction pipeline
+[2025-01-25 09:15:07,880] 20 root - INFO - Loading model from Artifacts\model.pkl
+[2025-01-25 09:15:07,937] 26 root - INFO - Making predictions with the trained model
+[2025-01-25 09:15:07,942] 33 root - ERROR - Exception occurred in prediction pipeline: could not convert string to float: 'Male'
+[2025-01-25 09:15:07,947] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 09:15:07] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+[2025-01-25 09:15:11,907] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 09:15:11] "GET / HTTP/1.1" 200 -
+[2025-01-25 09:15:24,819] 77 root - INFO - Converting custom data into DataFrame
+[2025-01-25 09:15:24,822] 17 root - INFO - Starting the prediction pipeline
+[2025-01-25 09:15:24,822] 20 root - INFO - Loading model from Artifacts\model.pkl
+[2025-01-25 09:15:24,876] 26 root - INFO - Making predictions with the trained model
+[2025-01-25 09:15:24,883] 33 root - ERROR - Exception occurred in prediction pipeline: could not convert string to float: 'Male'
+[2025-01-25 09:15:24,888] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 09:15:24] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+[2025-01-25 09:15:32,475] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 09:15:32] "GET / HTTP/1.1" 200 -
+[2025-01-25 09:17:35,169] 97 werkzeug - INFO -  * Detected change in 'E:\\Data_Science _master\\ML\\prac_project\\Credit Card Default Prediction\\src\\CreditCardDefaultPrediction\\pipelines\\prediction_pipeline.py', reloading

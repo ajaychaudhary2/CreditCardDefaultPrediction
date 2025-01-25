@@ -22,9 +22,16 @@ class DataIngestion:
 
             logging.info(f"Successfully read the data from CSV with {data.shape[0]} rows and {data.shape[1]} columns")
 
-            # Save raw data to Artifacts folder
+            # List of categorical columns to remove
+            categorical_columns_to_remove = ['SEX', 'EDUCATION', 'MARRIAGE']
+            # Remove these categorical columns from the dataset
+            data = data.drop(columns=categorical_columns_to_remove, axis=1)
+
+            logging.info(f"Removed categorical columns: {', '.join(categorical_columns_to_remove)}")
+
+            # Save raw data (without categorical columns) to Artifacts folder
             os.makedirs(os.path.dirname(self.data_ingestion_config.rawdata_path), exist_ok=True)
-            logging.info(f"Saving raw data to {self.data_ingestion_config.rawdata_path}")
+            logging.info(f"Saving cleaned raw data to {self.data_ingestion_config.rawdata_path}")
             data.to_csv(self.data_ingestion_config.rawdata_path, index=False)
 
             logging.info(f"Raw data successfully saved to {self.data_ingestion_config.rawdata_path}")

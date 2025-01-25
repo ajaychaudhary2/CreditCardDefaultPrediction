@@ -1,0 +1,5 @@
+[2025-01-25 09:59:04,394] 70 root - INFO - Converting custom data into DataFrame
+[2025-01-25 09:59:04,395] 14 root - INFO - Starting the prediction pipeline
+[2025-01-25 09:59:04,395] 17 root - INFO - Loading model from Artifacts\model.pkl
+[2025-01-25 09:59:05,645] 23 root - INFO - Making predictions with the trained model
+[2025-01-25 09:59:05,671] 26 root - INFO - Prediction pipeline completed successfully

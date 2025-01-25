@@ -1,0 +1,5 @@
+[2025-01-25 10:00:53,603] 70 root - INFO - Converting custom data into DataFrame
+[2025-01-25 10:00:53,604] 14 root - INFO - Starting the prediction pipeline
+[2025-01-25 10:00:53,604] 17 root - INFO - Loading model from Artifacts\model.pkl
+[2025-01-25 10:00:54,800] 23 root - INFO - Making predictions with the trained model
+[2025-01-25 10:00:54,980] 30 root - ERROR - Exception occurred in prediction pipeline: Input X contains infinity or a value too large for dtype('float32').

@@ -1,0 +1,7 @@
+[2025-01-25 10:52:14,404] 97 werkzeug - WARNING -  * Debugger is active!
+[2025-01-25 10:52:14,463] 97 werkzeug - INFO -  * Debugger PIN: 116-271-547
+[2025-01-25 10:52:18,820] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 10:52:18] "GET / HTTP/1.1" 200 -
+[2025-01-25 10:52:26,139] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 10:52:26] "GET / HTTP/1.1" 200 -
+[2025-01-25 10:52:33,038] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 10:52:33] "GET / HTTP/1.1" 200 -
+[2025-01-25 10:52:53,212] 97 werkzeug - INFO - 127.0.0.1 - - [25/Jan/2025 10:52:53] "[31m[1mGET /predict HTTP/1.1[0m" 405 -
+[2025-01-25 10:55:04,528] 97 werkzeug - INFO -  * Detected change in 'E:\\Data_Science _master\\ML\\prac_project\\Credit Card Default Prediction\\app.py', reloading

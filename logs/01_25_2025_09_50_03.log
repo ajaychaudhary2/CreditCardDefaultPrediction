@@ -1,0 +1,4 @@
+[2025-01-25 09:50:11,702] 15 root - INFO - Data Ingestion Initialized
+[2025-01-25 09:50:11,702] 19 root - INFO - Loading raw data from CSV file
+[2025-01-25 09:50:11,786] 23 root - INFO - Successfully read the data from CSV with 30000 rows and 25 columns
+[2025-01-25 09:50:11,787] 44 root - ERROR - Exception occurred during data ingestion: "['MARITAL_STATUS'] not found in axis"

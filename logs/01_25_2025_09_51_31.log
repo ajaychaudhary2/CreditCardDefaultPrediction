@@ -1,0 +1,54 @@
+[2025-01-25 09:51:32,698] 15 root - INFO - Data Ingestion Initialized
+[2025-01-25 09:51:32,698] 19 root - INFO - Loading raw data from CSV file
+[2025-01-25 09:51:32,768] 23 root - INFO - Successfully read the data from CSV with 30000 rows and 25 columns
+[2025-01-25 09:51:32,773] 30 root - INFO - Removed categorical columns: SEX, EDUCATION, MARRIAGE
+[2025-01-25 09:51:32,773] 34 root - INFO - Saving cleaned raw data to Artifacts\raw.csv
+[2025-01-25 09:51:33,063] 37 root - INFO - Raw data successfully saved to Artifacts\raw.csv
+[2025-01-25 09:51:33,063] 38 root - INFO - Data Ingestion completed successfully
+[2025-01-25 09:51:33,063] 19 root - INFO - Data transformation process initialized
+[2025-01-25 09:51:33,064] 23 root - INFO - Starting data transformation
+[2025-01-25 09:51:33,064] 26 root - INFO - Loading raw data from Artifacts\raw.csv
+[2025-01-25 09:51:33,152] 28 root - INFO - Successfully loaded raw data with 30000 rows and 22 columns
+[2025-01-25 09:51:33,152] 35 root - INFO - Separating features and target
+[2025-01-25 09:51:33,155] 40 root - INFO - Dropping rows with missing values
+[2025-01-25 09:51:33,158] 45 root - INFO - Applying SMOTE to balance the entire dataset
+[2025-01-25 09:51:33,675] 48 root - INFO - Successfully applied SMOTE
+[2025-01-25 09:51:33,702] 51 root - INFO - New Class Distribution: Counter({1: 23364, 0: 23364})
+[2025-01-25 09:51:33,702] 54 root - INFO - Train-test split started
+[2025-01-25 09:51:33,730] 56 root - INFO - Successfully split the data into train and test
+[2025-01-25 09:51:33,739] 63 root - INFO - Saving transformed train data to Artifacts\transformed_train.npy
+[2025-01-25 09:51:33,745] 65 root - INFO - Saving transformed test data to Artifacts\transformed_test.npy
+[2025-01-25 09:51:33,747] 68 root - INFO - Data transformation completed successfully
+[2025-01-25 09:51:33,752] 25 root - INFO - Splitting Dependent and Independent variables from train and test data
+[2025-01-25 09:51:33,752] 32 root - INFO - Training data shape: (35046, 20), Test data shape: (11682, 20)
+[2025-01-25 09:51:33,752] 35 root - INFO - Initializing RandomForestClassifier with specified hyperparameters
+[2025-01-25 09:51:33,752] 47 root - INFO - Training the RandomForestClassifier
+[2025-01-25 09:51:50,536] 49 root - INFO - Model training completed
+[2025-01-25 09:51:50,536] 52 root - INFO - Making predictions on train and test data
+[2025-01-25 09:51:51,245] 57 root - INFO - Generating classification reports for train and test data
+[2025-01-25 09:51:51,333] 62 root - INFO - Calculating accuracy scores for train and test data
+[2025-01-25 09:51:51,338] 67 root - INFO - Classification Report - Training Data:
+              precision    recall  f1-score   support
+
+         0.0       0.75      0.87      0.81     17545
+         1.0       0.85      0.71      0.77     17501
+
+    accuracy                           0.79     35046
+   macro avg       0.80      0.79      0.79     35046
+weighted avg       0.80      0.79      0.79     35046
+
+[2025-01-25 09:51:51,338] 68 root - INFO - Classification Report - Test Data:
+              precision    recall  f1-score   support
+
+         0.0       0.72      0.85      0.78      5819
+         1.0       0.82      0.68      0.74      5863
+
+    accuracy                           0.76     11682
+   macro avg       0.77      0.76      0.76     11682
+weighted avg       0.77      0.76      0.76     11682
+
+[2025-01-25 09:51:51,338] 69 root - INFO - Training Accuracy: 0.7912
+[2025-01-25 09:51:51,338] 70 root - INFO - Test Accuracy: 0.7635
+[2025-01-25 09:51:51,338] 74 root - INFO - Model is neither underfitting nor significantly overfitting.
+[2025-01-25 09:51:51,338] 81 root - INFO - Saving trained model to Artifacts\model.pkl
+[2025-01-25 09:51:51,524] 84 root - INFO - Model training process completed successfully
