@@ -10,12 +10,10 @@ This project is a machine learning-based application to predict whether a custom
 - [Features](#features)
 - [Dataset](#dataset)
 - [Technologies Used](#technologies-used)
-- [Directory Structure](#directory-structure)
-- [How to Run](#how-to-run)
-- [Endpoints](#endpoints)
-- [Screenshots](#screenshots)
-- [Future Enhancements](#future-enhancements)
 - [Contributors](#contributors)
+- [Directory Structure](#directory-structure)
+
+
 
 ---
 
