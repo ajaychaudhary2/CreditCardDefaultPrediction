@@ -2,6 +2,8 @@
 
 This project is a machine learning-based application to predict whether a customer will default on their credit card payment in the upcoming month. The system is designed to assist financial institutions in making data-driven decisions for credit risk assessment.
 
+
+
 ## Table of Contents
 
 - [Project Overview](#project-overview)
@@ -34,9 +36,12 @@ This project also includes a **Flask web application** that provides an interact
 
 ---
 
+
 ## Dataset
 
 The dataset used for this project is based on UCI Machine Learning Repository's **Default of Credit Card Clients Dataset**.
+
+
 
 ### Key Features:
 
@@ -67,6 +72,24 @@ The dataset used for this project is based on UCI Machine Learning Repository's 
 
 ---
 
+### Key Highlights:
+1. **Clear Project Overview**: Provides a concise summary of the purpose and functionality.
+2. **Comprehensive Dataset Description**: Explains each feature in the dataset.
+3. **Step-by-Step Setup Instructions**: Helps users quickly set up and run the project.
+4. **Future Enhancements Section**: Opens the door for potential growth of the project.
+5. **Directory Structure**: Offers clarity on where each file resides and its purpose.
+
+---
+
+## Contributors
+
+- **Ajay Chaudhary**  
+  GitHub: [ajaychaudhary2](https://github.com/ajaychaudhary2)  
+  LinkedIn: [Ajay Chaudhary](https://www.linkedin.com/in/ajay-chaudhary-02287a2ab/
+
+---
+
+
 ## Directory Structure
 
 ```plaintext
@@ -90,57 +113,18 @@ CreditCardDefaultPrediction/
 ├── app.py                          # Flask application entry point
 ├── requirements.txt                # Python dependencies
 ├── README.md                       # Project documentation
-
-
-# How to Run
-
----
-
-### Prerequisites
-- **Python 3.8 or above**
-- **Git installed on your system**
-- **Virtual environment** (optional but recommended)
-
----
-
-### Steps
-
-#### 1. Clone the repository:
-
-```bash
-git clone https://github.com/ajaychaudhary2/CreditCardDefaultPrediction.git
-cd CreditCardDefaultPrediction
+----------------------------------------------------
 
 
 
 
-Steps
-Clone the repository:
-
-bash
-Copy
-Edit
-git clone https://github.com/ajaychaudhary2/CreditCardDefaultPrediction.git
-cd CreditCardDefaultPrediction
-Set up a virtual environment (optional but recommended):
 
 
 
 
-## Contributors
-
-- **Ajay Chaudhary**  
-  GitHub: [ajaychaudhary2](https://github.com/ajaychaudhary2)  
-  LinkedIn: [Ajay Chaudhary](https://www.linkedin.com/in/ajay-chaudhary-02287a2ab/)
 
 
 
-### Key Highlights:
-1. **Clear Project Overview**: Provides a concise summary of the purpose and functionality.
-2. **Comprehensive Dataset Description**: Explains each feature in the dataset.
-3. **Step-by-Step Setup Instructions**: Helps users quickly set up and run the project.
-4. **Future Enhancements Section**: Opens the door for potential growth of the project.
-5. **Directory Structure**: Offers clarity on where each file resides and its purpose.
 
 
 
